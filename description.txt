@@ -1,0 +1,100 @@
+Build a web app that helps a beginner open a childcare center in Michigan by guiding them through the licensing process and program enrollment (e.g., Great Start to Quality, CACFP). The app should provide a step-by-step checklist, document vault, and a basic AI helper that answers plain-English questions about the process.
+
+Core Features (MVP)
+1. Onboarding Wizard
+
+Ask user: business type (Center / Family / Group Home), address, capacity, ages served.
+
+Store this in user profile.
+
+2. Dashboard
+
+Shows progress bar of licensing steps.
+
+“Next Best Action” banner (pulled from checklist).
+
+Shortcuts: Checklist, Upload Docs, Programs, Ask AI.
+
+3. Michigan Licensing Checklist
+
+Pre-seeded JSON config for Michigan centers (provided earlier).
+
+Each task includes:
+
+Title, description (why + how)
+
+Dependencies (unlock later tasks only after prereqs are complete)
+
+Evidence requirements (e.g., Fire Inspection Report)
+
+Status (to-do / in-progress / done)
+
+Users can mark tasks complete, attach documents, and add notes.
+
+Auto-calculate “unlocked” tasks.
+
+4. Document Vault
+
+Upload PDF/JPG/PNG.
+
+Tag uploads to a task requirement.
+
+Show “✓ evidence attached” inside checklist.
+
+Store in Supabase/S3.
+
+5. Program Matcher (Great Start, CACFP)
+
+Intake: ask if they serve food, want coaching, staff registry status.
+
+Match against JSON config of programs.
+
+Output: “Eligible / Likely / Not Eligible” + plain-English next steps.
+
+6. AI Helper (Basic)
+
+Sidebar chat bubble.
+
+Seed with checklist text + FAQ about Michigan childcare licensing.
+
+Handles queries like:
+
+“What’s next?”
+
+“How do I get a fire inspection?”
+
+“Explain Great Start to Quality.”
+
+Use OpenAI API with embeddings search over JSON config for grounding.
+
+Tech Stack
+
+Frontend: Next.js + Tailwind + shadcn/ui
+
+Backend/DB: Supabase (auth, Postgres, storage) or Prisma + SQLite (local)
+
+File Storage: Supabase Storage (S3-like)
+
+Auth: Clerk or Supabase Auth (Google login)
+
+AI: OpenAI API (embeddings + LLM)
+
+Deploy: Vercel + Supabase
+
+Data Models
+
+User: id, email, centers[]
+
+Center: id, userId, name, type, status, tasks[], documents[]
+
+TaskState: id, centerId, taskKey, status, dueDate, evidenceIds[]
+
+Document: id, centerId, name, url, type, tags, validFrom, validTo
+
+ProgramMatch: id, centerId, programKey, eligibility, rationale, nextSteps
+
+Seed Data
+
+JSON file for Michigan licensing tasks (pre-app, facility, staff, application, post, GSQ).
+
+JSON file for Michigan programs (Great Start, CACFP).
