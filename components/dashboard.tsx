@@ -4,17 +4,20 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import { Center, TaskState, LicensingTask } from '@/lib/types'
+import { Center, TaskState, LicensingTask, Document } from '@/lib/types'
 import { getProgressPercentage, getStatusColor } from '@/lib/utils'
 import { CheckCircle, Clock, FileText, Upload, MessageCircle, BookOpen } from 'lucide-react'
+import { FileUpload } from '@/components/file-upload'
 
 interface DashboardProps {
   center: Center
   tasks: LicensingTask[]
   taskStates: TaskState[]
+  documents: Document[]
+  onDocumentUpload: (document: Document) => void
 }
 
-export function Dashboard({ center, tasks, taskStates }: DashboardProps) {
+export function Dashboard({ center, tasks, taskStates, documents, onDocumentUpload }: DashboardProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'checklist' | 'documents' | 'programs' | 'ai'>('overview')
 
   const completedTasks = taskStates.filter(task => task.status === 'done').length
@@ -105,7 +108,10 @@ export function Dashboard({ center, tasks, taskStates }: DashboardProps) {
                   Estimated: {nextAction.estimatedDays} days
                 </span>
               </div>
-              <Button className="w-full">
+              <Button 
+                className="w-full"
+                onClick={() => setActiveTab('checklist')}
+              >
                 Start This Task
               </Button>
             </div>
@@ -207,18 +213,10 @@ export function Dashboard({ center, tasks, taskStates }: DashboardProps) {
         <h2 className="text-2xl font-bold">Document Vault</h2>
         <Button onClick={() => setActiveTab('overview')}>Back to Dashboard</Button>
       </div>
-      <Card>
-        <CardContent className="pt-6">
-          <div className="text-center py-8">
-            <Upload className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Upload Your Documents</h3>
-            <p className="text-muted-foreground mb-4">
-              Upload and organize your licensing documents
-            </p>
-            <Button>Upload Document</Button>
-          </div>
-        </CardContent>
-      </Card>
+      <FileUpload 
+        centerId={center.id} 
+        onUploadComplete={onDocumentUpload}
+      />
     </div>
   )
 
