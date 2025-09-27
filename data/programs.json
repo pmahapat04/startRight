@@ -1,0 +1,149 @@
+[
+  {
+    "key": "great-start-to-quality",
+    "name": "Great Start to Quality",
+    "description": "Michigan's quality rating and improvement system for early childhood programs",
+    "requirements": [
+      "Must be a licensed childcare provider",
+      "Complete self-assessment",
+      "Develop quality improvement plan",
+      "Participate in ongoing training and support"
+    ],
+    "benefits": [
+      "Quality improvement support and resources",
+      "Increased visibility to families",
+      "Access to professional development opportunities",
+      "Potential for higher reimbursement rates",
+      "Recognition for quality achievements"
+    ],
+    "eligibilityCriteria": {
+      "servesFood": false,
+      "wantsCoaching": true,
+      "staffRegistryStatus": true,
+      "centerType": ["Center", "Family", "Group Home"]
+    },
+    "applicationProcess": [
+      "Complete online enrollment form",
+      "Submit self-assessment results",
+      "Develop quality improvement plan",
+      "Attend orientation session",
+      "Begin quality improvement activities"
+    ],
+    "contactInfo": {
+      "name": "Great Start to Quality",
+      "phone": "1-877-614-7328",
+      "email": "greatstart@michigan.gov",
+      "website": "https://www.greatstarttoquality.org"
+    }
+  },
+  {
+    "key": "cacfp",
+    "name": "Child and Adult Care Food Program (CACFP)",
+    "description": "Federal nutrition program that provides reimbursement for nutritious meals and snacks",
+    "requirements": [
+      "Must be a licensed childcare provider",
+      "Serve meals and snacks to children",
+      "Follow USDA nutrition guidelines",
+      "Complete annual training",
+      "Maintain detailed meal records"
+    ],
+    "benefits": [
+      "Reimbursement for nutritious meals and snacks",
+      "Nutrition education and training",
+      "Menu planning assistance",
+      "Access to nutrition resources",
+      "Support for healthy eating habits"
+    ],
+    "eligibilityCriteria": {
+      "servesFood": true,
+      "wantsCoaching": false,
+      "staffRegistryStatus": false,
+      "centerType": ["Center", "Family", "Group Home"]
+    },
+    "applicationProcess": [
+      "Complete CACFP application",
+      "Attend nutrition training",
+      "Develop meal planning system",
+      "Submit menu for approval",
+      "Begin serving reimbursable meals"
+    ],
+    "contactInfo": {
+      "name": "Michigan Department of Education - CACFP",
+      "phone": "517-241-5334",
+      "email": "cacfp@michigan.gov",
+      "website": "https://www.michigan.gov/mde/cacfp"
+    }
+  },
+  {
+    "key": "head-start-partnership",
+    "name": "Head Start Partnership",
+    "description": "Partnership opportunities with local Head Start programs",
+    "requirements": [
+      "Must be a licensed childcare provider",
+      "Serve eligible families",
+      "Meet Head Start performance standards",
+      "Participate in ongoing monitoring"
+    ],
+    "benefits": [
+      "Additional funding for eligible children",
+      "Comprehensive family services",
+      "Health and nutrition services",
+      "Professional development opportunities",
+      "Support for children with special needs"
+    ],
+    "eligibilityCriteria": {
+      "servesFood": false,
+      "wantsCoaching": true,
+      "staffRegistryStatus": true,
+      "centerType": ["Center", "Group Home"]
+    },
+    "applicationProcess": [
+      "Contact local Head Start program",
+      "Complete partnership application",
+      "Meet performance standards",
+      "Participate in monitoring visits",
+      "Begin serving Head Start children"
+    ],
+    "contactInfo": {
+      "name": "Michigan Head Start Association",
+      "phone": "517-374-1122",
+      "email": "info@mhsa.org",
+      "website": "https://www.mhsa.org"
+    }
+  },
+  {
+    "key": "child-care-subsidy",
+    "name": "Child Care Subsidy Program",
+    "description": "State program that helps low-income families pay for childcare",
+    "requirements": [
+      "Must be a licensed childcare provider",
+      "Accept subsidy payments",
+      "Meet quality standards",
+      "Maintain accurate attendance records"
+    ],
+    "benefits": [
+      "Guaranteed payment for eligible children",
+      "Increased enrollment opportunities",
+      "Support for low-income families",
+      "Access to additional resources"
+    ],
+    "eligibilityCriteria": {
+      "servesFood": false,
+      "wantsCoaching": false,
+      "staffRegistryStatus": false,
+      "centerType": ["Center", "Family", "Group Home"]
+    },
+    "applicationProcess": [
+      "Register as subsidy provider",
+      "Complete provider agreement",
+      "Submit required documentation",
+      "Begin accepting subsidy payments"
+    ],
+    "contactInfo": {
+      "name": "Michigan Department of Health and Human Services",
+      "phone": "1-866-674-5437",
+      "email": "childcare@michigan.gov",
+      "website": "https://www.michigan.gov/mdhhs/childcare"
+    }
+  }
+]

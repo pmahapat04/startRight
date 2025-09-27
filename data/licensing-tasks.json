@@ -1,0 +1,134 @@
+[
+  {
+    "key": "research-requirements",
+    "title": "Research Licensing Requirements",
+    "description": "Understand the specific licensing requirements for your childcare center type in Michigan",
+    "why": "Each type of childcare facility has different requirements. Understanding these upfront helps you plan and budget effectively.",
+    "how": "Visit the Michigan Department of Licensing and Regulatory Affairs (LARA) website, review the Child Care Licensing Rules, and consult with local licensing consultants if needed.",
+    "dependencies": [],
+    "evidenceRequirements": ["Research notes", "LARA website screenshots"],
+    "estimatedDays": 7,
+    "category": "pre-application"
+  },
+  {
+    "key": "business-plan",
+    "title": "Develop Business Plan",
+    "description": "Create a comprehensive business plan including financial projections and operational procedures",
+    "why": "A solid business plan is essential for securing funding and demonstrates your preparedness to licensing authorities.",
+    "how": "Include market analysis, financial projections, staffing plans, curriculum development, and emergency procedures.",
+    "dependencies": ["research-requirements"],
+    "evidenceRequirements": ["Business plan document", "Financial projections", "Market analysis"],
+    "estimatedDays": 14,
+    "category": "pre-application"
+  },
+  {
+    "key": "secure-location",
+    "title": "Secure and Prepare Facility",
+    "description": "Find and prepare a suitable location that meets all licensing requirements",
+    "why": "The facility must meet specific safety, space, and accessibility requirements before you can apply for a license.",
+    "how": "Find a location, ensure it meets space requirements (35 sq ft per child indoors, 75 sq ft outdoors), check zoning compliance, and plan necessary renovations.",
+    "dependencies": ["research-requirements"],
+    "evidenceRequirements": ["Lease agreement", "Floor plans", "Zoning compliance letter"],
+    "estimatedDays": 30,
+    "category": "facility"
+  },
+  {
+    "key": "fire-inspection",
+    "title": "Fire Safety Inspection",
+    "description": "Schedule and pass a fire safety inspection with your local fire department",
+    "why": "Fire safety compliance is mandatory for all childcare facilities and must be completed before licensing.",
+    "how": "Contact your local fire department to schedule an inspection. Ensure all fire safety equipment is installed and functioning properly.",
+    "dependencies": ["secure-location"],
+    "evidenceRequirements": ["Fire inspection report", "Fire safety equipment receipts"],
+    "estimatedDays": 14,
+    "category": "facility"
+  },
+  {
+    "key": "health-inspection",
+    "title": "Health Department Inspection",
+    "description": "Schedule and pass a health department inspection",
+    "why": "Health and sanitation standards must be met to ensure the safety of children in your care.",
+    "how": "Contact your local health department to schedule an inspection. Ensure proper sanitation, food handling, and health safety measures are in place.",
+    "dependencies": ["secure-location"],
+    "evidenceRequirements": ["Health inspection report", "Sanitation plan"],
+    "estimatedDays": 14,
+    "category": "facility"
+  },
+  {
+    "key": "background-checks",
+    "title": "Complete Background Checks",
+    "description": "Complete criminal background checks for all staff and household members",
+    "why": "All individuals who will have contact with children must pass comprehensive background checks.",
+    "how": "Submit fingerprint cards and background check forms for all staff members and household members over 18.",
+    "dependencies": [],
+    "evidenceRequirements": ["Background check results", "Fingerprint cards"],
+    "estimatedDays": 21,
+    "category": "staff"
+  },
+  {
+    "key": "staff-training",
+    "title": "Complete Required Staff Training",
+    "description": "Ensure all staff complete required training including CPR, First Aid, and child development",
+    "why": "Staff must be properly trained to ensure the safety and development of children in your care.",
+    "how": "Schedule and complete CPR/First Aid certification, child development training, and any other required training programs.",
+    "dependencies": ["background-checks"],
+    "evidenceRequirements": ["Training certificates", "CPR certification", "First Aid certification"],
+    "estimatedDays": 14,
+    "category": "staff"
+  },
+  {
+    "key": "curriculum-development",
+    "title": "Develop Educational Curriculum",
+    "description": "Create age-appropriate educational curriculum and daily schedules",
+    "why": "A structured curriculum demonstrates your commitment to child development and is required for licensing.",
+    "how": "Develop age-appropriate activities, learning objectives, and daily schedules that promote child development.",
+    "dependencies": [],
+    "evidenceRequirements": ["Curriculum documents", "Daily schedule templates"],
+    "estimatedDays": 10,
+    "category": "pre-application"
+  },
+  {
+    "key": "submit-application",
+    "title": "Submit Licensing Application",
+    "description": "Complete and submit your official licensing application to LARA",
+    "why": "This is the formal application that starts the official licensing process.",
+    "how": "Complete all required forms, gather supporting documentation, and submit to LARA with appropriate fees.",
+    "dependencies": ["fire-inspection", "health-inspection", "background-checks", "staff-training"],
+    "evidenceRequirements": ["Completed application", "Application fee receipt", "All supporting documents"],
+    "estimatedDays": 7,
+    "category": "application"
+  },
+  {
+    "key": "licensing-inspection",
+    "title": "Licensing Inspection",
+    "description": "Pass the final licensing inspection conducted by LARA",
+    "why": "This is the final step before receiving your license to operate.",
+    "how": "Prepare your facility for inspection, ensure all requirements are met, and work with the licensing specialist to address any issues.",
+    "dependencies": ["submit-application"],
+    "evidenceRequirements": ["Inspection report", "Corrective action plan (if needed)"],
+    "estimatedDays": 14,
+    "category": "post-licensing"
+  },
+  {
+    "key": "great-start-enrollment",
+    "title": "Enroll in Great Start to Quality",
+    "description": "Enroll your program in Michigan's Great Start to Quality rating system",
+    "why": "Great Start to Quality provides quality improvement support and can increase your program's visibility to families.",
+    "how": "Complete the Great Start to Quality enrollment process, which includes a self-assessment and quality improvement planning.",
+    "dependencies": ["licensing-inspection"],
+    "evidenceRequirements": ["GSQ enrollment form", "Self-assessment results"],
+    "estimatedDays": 21,
+    "category": "gsq"
+  },
+  {
+    "key": "cacfp-application",
+    "title": "Apply for Child and Adult Care Food Program (CACFP)",
+    "description": "Apply for CACFP if you plan to serve meals to children",
+    "why": "CACFP provides reimbursement for nutritious meals and snacks, helping to offset food costs.",
+    "how": "Complete the CACFP application process, which includes menu planning and nutrition education requirements.",
+    "dependencies": ["licensing-inspection"],
+    "evidenceRequirements": ["CACFP application", "Menu planning documents"],
+    "estimatedDays": 14,
+    "category": "gsq"
+  }
+]
