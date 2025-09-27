@@ -26,6 +26,7 @@ export function Dashboard({ center, tasks, taskStates, documents, onDocumentUplo
   const [aiGeneratedTasks, setAiGeneratedTasks] = useState<any[]>([])
   const [isGeneratingChecklist, setIsGeneratingChecklist] = useState(false)
   const [checklistLastGenerated, setChecklistLastGenerated] = useState<Date | null>(null)
+  const [completedAiTasks, setCompletedAiTasks] = useState<Set<string>>(new Set())
   
   // Grant matching states
   const [programView, setProgramView] = useState<'questionnaire' | 'results'>('questionnaire')
@@ -294,7 +295,14 @@ export function Dashboard({ center, tasks, taskStates, documents, onDocumentUplo
             }
 
             return (
-              <Card key={task.id || index} className="relative">
+              <Card 
+                key={task.id || index} 
+                className={`relative transition-colors duration-200 ${
+                  completedAiTasks.has(task.id) 
+                    ? 'bg-green-50 border-green-200' 
+                    : ''
+                }`}
+              >
                 <CardContent className="pt-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
@@ -371,8 +379,23 @@ export function Dashboard({ center, tasks, taskStates, documents, onDocumentUplo
                     </div>
                     
                     <div className="flex flex-col gap-2">
-                      <Button size="sm" variant="outline">
-                        Mark Complete
+                      <Button 
+                        size="sm" 
+                        variant={completedAiTasks.has(task.id) ? "default" : "outline"}
+                        onClick={() => {
+                          setCompletedAiTasks(prev => {
+                            const newSet = new Set(prev)
+                            if (newSet.has(task.id)) {
+                              newSet.delete(task.id)
+                            } else {
+                              newSet.add(task.id)
+                            }
+                            return newSet
+                          })
+                        }}
+                        className={completedAiTasks.has(task.id) ? "bg-green-600 hover:bg-green-700" : ""}
+                      >
+                        {completedAiTasks.has(task.id) ? "✓ Completed" : "Mark Complete"}
                       </Button>
                       {task.contactInfo?.phone && (
                         <Button size="sm" variant="ghost" className="text-xs">
