@@ -80,11 +80,11 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
           </h4>
           <p className="text-sm text-muted-foreground mb-2">{grant.whyGoodFit}</p>
           <div className="flex flex-wrap gap-1">
-            {grant.eligibilityMet.map((criteria, idx) => (
+            {Array.isArray(grant.eligibilityMet) ? grant.eligibilityMet.map((criteria, idx) => (
               <span key={idx} className="px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-800 border border-gray-200">
                 {criteria}
               </span>
-            ))}
+            )) : null}
           </div>
         </div>
 
@@ -112,12 +112,12 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
               Next Steps
             </h4>
             <ul className="text-sm space-y-1">
-              {grant.nextSteps.map((step, idx) => (
+              {Array.isArray(grant.nextSteps) ? grant.nextSteps.map((step, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
                   <span className="text-muted-foreground">{step}</span>
                 </li>
-              ))}
+              )) : null}
             </ul>
           </div>
         )}
@@ -230,7 +230,7 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
             </span>
           </div>
           <div className="grid gap-4">
-            {results.highMatchGrants.map(grant => renderGrant(grant, 'high'))}
+            {Array.isArray(results.highMatchGrants) ? results.highMatchGrants.map(grant => renderGrant(grant, 'high')) : null}
           </div>
         </div>
       )}
@@ -245,7 +245,7 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
             </span>
           </div>
           <div className="grid gap-4">
-            {results.goodMatchGrants.map(grant => renderGrant(grant, 'good'))}
+            {Array.isArray(results.goodMatchGrants) ? results.goodMatchGrants.map(grant => renderGrant(grant, 'good')) : null}
           </div>
         </div>
       )}
@@ -260,7 +260,7 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
             </span>
           </div>
           <div className="grid gap-4">
-            {results.possibleGrants.map(grant => renderGrant(grant, 'possible'))}
+            {Array.isArray(results.possibleGrants) ? results.possibleGrants.map(grant => renderGrant(grant, 'possible')) : null}
           </div>
         </div>
       )}
@@ -304,14 +304,14 @@ export function GrantResults({ results, profile, center, onNewSearch, onBack }: 
           </CardHeader>
           <CardContent>
             <div className="grid gap-2">
-              {results.nextSteps.map((step, idx) => (
+              {Array.isArray(results.nextSteps) ? results.nextSteps.map((step, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
                   <div className="w-6 h-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-medium mt-0.5">
                     {idx + 1}
                   </div>
                   <span className="text-blue-900">{step}</span>
                 </div>
-              ))}
+              )) : null}
             </div>
           </CardContent>
         </Card>
